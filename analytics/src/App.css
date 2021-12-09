@@ -1,6 +1,10 @@
+.about{
+  margin-left: 30px;
+}
 .App{
   display: flex;
-  margin: 50px 10px;
+  margin: 10px 10px;
+  background-color:rgb(248, 244, 244);
 }
 .navigation{
   display: flex;
@@ -8,29 +12,94 @@
   background-color: rgb(55, 122, 247);
   border-radius: 10px;
   padding-bottom: 20px;
-  height: 120vh;
+  height: 100%;
 }
 .navigationComp{
   display: flex;
   padding: 30px 30px;
   color:white;
-  font-size: 20px;
+  font-size: 1em;
 }
 .navigationComp p{
   margin: 0 8px;
   padding: 0;
 }
-.navigationComp p:hover{
+.navigationComp:hover{
   cursor: pointer;
+}
+
+.smallCards{
+  display: flex;
+  gap: 50px 50px;
+  flex-wrap: wrap;
+}
+.cardSide{
+  padding: 0 0 0 3px;
+  background-color: red;
+  border-radius: 5px;
 }
 
 .smallCard{
   display: flex;
+  flex-wrap: wrap;
   width:250px;
   padding:10px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .smallCard p{
   margin: 10px 0;
+}
+
+.dashBoard{
+  margin-left: 2%;
+  width: 100%;
+}
+
+.charts{
+  display: flex;
+  margin-top:50px;
+  flex-wrap: wrap;
+  gap:70px;
+}
+
+.lineChart{
+  width: 800px;
+}
+.piChart{
+  width: 400px;
+  height: 700px;
+}
+
+@media (max-width:1200px){
+  .smallCard{
+    width: 350px;
+  }
+}
+
+@media (max-width:1060px){
+  .lineChart{
+    width:500px;
+  }
+  .smallCard{
+    width:""
+  }
+}
+@media (max-width:700px){
+  .lineChart{
+    height: 280px;
+    margin-right: 10px;
+  }
+  .smallCard{
+    width: 250px;
+  }
+  .piChart{
+    width: 320px;
+  }
+}
+@media (max-width:350px){
+  .App{
+    position: absolute;
+    float: left;
+  }
 }

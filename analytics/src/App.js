@@ -2,6 +2,9 @@ import React from "react";
 import "./App.css";
 import { Smallcard } from "./Smallcard";
 import { Nav } from "./Nav";
+import { Line,Doughnut } from 'react-chartjs-2';
+import faker from 'faker';
+import { Card } from "@mui/material";
 
 import {
   Chart as ChartJS,
@@ -13,8 +16,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line,Doughnut } from 'react-chartjs-2';
-import faker from 'faker';
+
 
 ChartJS.register(
   CategoryScale,
@@ -47,20 +49,20 @@ export const options = {
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 const donetdata = {
-  labels: ['Daily', 'Weekly', 'Monthly'],
+  labels: ['Father', 'Mother', 'Son'],
   datasets: [
     {
       label: '# of Votes',
       data: [12, 19, 15],
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
+        'rgba(247, 100, 74)',
+        'rgba(88, 230, 159)',
+        'rgba(76, 129, 228)',
       ],
       borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
+        'rgba(247, 100, 74)',
+        'rgba(88, 230, 159)',
+        'rgba(76, 129, 228)',
       ],
       borderWidth: 1,
     },
@@ -90,12 +92,12 @@ const linedata = {
 export default function App() {
   return (
     <div>
-      <div className="App">
-      {/* <Line data={data} legend={legend} options={options} /> */}
-      <Nav />
-      <Dashboard />
-    </div>
-    
+      <h1 className="about">Analytics</h1>
+        <div className="App">
+        {/* <Line data={data} legend={legend} options={options} /> */}
+        <Nav />
+        <Dashboard />
+      </div>
     </div>
   );
 }
@@ -108,17 +110,21 @@ const tagdata = [{tagName:"EARNINGS (Daily)",price:"500"},
 
 function Dashboard(){
   return(
-    <div style={{marginLeft:"2%"}}>
+    <div className="dashBoard">
       <h1>Dashboard</h1>
-      <div style={{display:"flex",columnGap:"50px",flexWrap:"wrap"}}>
+      <div className="smallCards">
         {tagdata.map((element)=><Smallcard tagName={element.tagName} price={element.price} />)}
       </div>
-      <div style={{display:"flex",marginTop:"50px"}}>
-        <div style={{width:"1000px",height:"1000px"}}>
-          <Line options={options} data={linedata} />
+      <div className="charts">
+        <div className="lineChart">
+          <Card >
+            <Line options={options} data={linedata} />
+          </Card>
         </div>
-        <div style={{width:"400px",height:"400px",marginTop:"50px"}}>
+        <div className="piChart">
+          <Card>
           <Doughnut data={donetdata} />
+          </Card>
         </div>
       </div>
     </div>

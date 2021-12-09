@@ -4,7 +4,8 @@ import Card from '@mui/material/Card';
 
 export function Smallcard({ tagName, price }) {
   return (
-    <Card style={{ height: "100px" }} variant="outlined">
+    <div className="cardSide">
+      <Card style={{ height: "85px",backgroundColor:"white" }} variant="outlined">
       <div className="smallCard">
         <div>
           {tagName}
@@ -12,6 +13,7 @@ export function Smallcard({ tagName, price }) {
         </div>
         <DateRangeOutlinedIcon style={{ marginLeft: "auto" }} sx={{ fontSize: 40 }} />
       </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
