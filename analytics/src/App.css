@@ -53,7 +53,6 @@
 
 .dashBoard{
   margin-left: 2%;
-  width: 100%;
 }
 
 .charts{
@@ -85,7 +84,7 @@
     width:""
   }
 }
-@media (max-width:700px){
+@media (max-width:730px){
   .lineChart{
     height: 280px;
     margin-right: 10px;
@@ -96,10 +95,7 @@
   .piChart{
     width: 320px;
   }
-}
-@media (max-width:350px){
   .App{
-    position: absolute;
-    float: left;
+    width: 730px;
   }
 }
